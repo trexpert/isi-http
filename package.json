@@ -1,0 +1,23 @@
+{
+	"name"          : "isi-http",
+	"version"       : "1.0.0",
+	"description"   : "small http helper",
+	"main"          : "index.js",
+	"publishConfig" : {
+		"registry" : "https://registry.npmjs.org"
+	},
+	"scripts"       : { },
+	"repository"    : {
+		"type" : "git",
+		"url"  : "git+https://github.com/trexpert/isi-http.git"
+	},
+	"author"        : "Benjamin Isberner",
+	"license"       : "ISC",
+	"bugs"          : {
+		"url" : "https://github.com/trexpert/isi-http/issues"
+	},
+	"homepage"      : "https://github.com/trexpert/isi-http#readme",
+	"dependencies"  : {
+		"q" : "^1.5.0"
+	}
+}
