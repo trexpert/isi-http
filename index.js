@@ -15,20 +15,21 @@ var requestOptions = {
 
 var interface = {
 	requestUrl : function ( targetUrl, method, data ) {
-		method      = method || "GET";
+		method = method.toUpperCase() || "GET";
 
-		var result = url.parse(targetUrl);
-		var options = JSON.parse( JSON.stringify( requestOptions ) );
+		var result     = url.parse( targetUrl );
+		var options    = JSON.parse( JSON.stringify( requestOptions ) );
 		options.method = method;
-		options.host =  result.hostname;
-		options.path =  result.path;
-		options.port =  result.port;
+		options.host   = result.hostname;
+		options.path   = result.path;
+		options.port   = result.port;
+		options.data   = data;
 
 		return this.request( options );
 	},
 
 	request : function ( options ) {
-		var deferred = Q.defer();
+		var deferred      = Q.defer();
 		var usedLib       = options.port == 443 ? https : http;
 		var data          = options.data == undefined ? "" : JSON.stringify( options.data );
 		var writeToStream = false;
@@ -43,8 +44,6 @@ var interface = {
 			delete options.data;
 			writeToStream = true;
 		}
-
-
 
 		var req = usedLib.request( options, function ( res ) {
 			var output = '';
