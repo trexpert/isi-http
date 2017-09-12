@@ -1,6 +1,6 @@
 {
   "name": "isi-http",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "small http helper",
   "main": "index.js",
   "publishConfig": {
