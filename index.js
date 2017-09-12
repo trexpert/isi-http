@@ -22,7 +22,7 @@ var interface = {
 		options.method = method;
 		options.host   = result.hostname;
 		options.path   = result.path;
-		options.port   = options.protocol == "https:" ? 443 : 80;
+		options.port   = result.protocol == "https:" ? 443 : 80;
 		options.data   = data;
 
 		return this.request( options );
